@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <meta charset="utf-8">
+    
+    <title>WIN10 子系统安装 HEXO 静态博客 | Leo&#39;s Blog</title>
+    
+    
+        <meta name="keywords" content="win10, linux, ubuntu, hexo, node.js" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="安装 win10 子系统 Ubuntu 设置 → 更新和安全 → 开发者选项 → 使用开发人员功能 → 勾选「开发人员模式」 控制面板 → 程序和功能 → 启用或关闭 Windows 功能 → 勾选「适用于 Linux 的 Windows 子系统」 重启系统 打开 Windows Stroe，下载 Ubuntu 即可  更换 root 用户密码安装完 ubuntu 后，每次开机 root 的密码都">
+<meta name="keywords" content="win10, linux, ubuntu, hexo, node.js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="WIN10 子系统安装 HEXO 静态博客">
+<meta property="og:url" content="http://yoursite.com/2018/06/07/win10_ubuntu/index.html">
+<meta property="og:site_name" content="Leo&#39;s Blog">
+<meta property="og:description" content="安装 win10 子系统 Ubuntu 设置 → 更新和安全 → 开发者选项 → 使用开发人员功能 → 勾选「开发人员模式」 控制面板 → 程序和功能 → 启用或关闭 Windows 功能 → 勾选「适用于 Linux 的 Windows 子系统」 重启系统 打开 Windows Stroe，下载 Ubuntu 即可  更换 root 用户密码安装完 ubuntu 后，每次开机 root 的密码都">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-06-07T18:02:24.419Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="WIN10 子系统安装 HEXO 静态博客">
+<meta name="twitter:description" content="安装 win10 子系统 Ubuntu 设置 → 更新和安全 → 开发者选项 → 使用开发人员功能 → 勾选「开发人员模式」 控制面板 → 程序和功能 → 启用或关闭 Windows 功能 → 勾选「适用于 Linux 的 Windows 子系统」 重启系统 打开 Windows Stroe，下载 Ubuntu 即可  更换 root 用户密码安装完 ubuntu 后，每次开机 root 的密码都">
+    
+
+    
+
+    
+        <link rel="icon" href="/favicon.ico" />
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="/libs/jquery/plugins/cookie/1.4.1/jquery.cookie.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">Leo&#39;s Blog</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/">首页</a>
+                
+                    <a class="main-nav-link" href="/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/tags">标签</a>
+                
+                    <a class="main-nav-link" href="/about">关于</a>
+                
+                
+                    <a class="main-nav-link" id="world-reverse" href="#">表世界</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/css/images/avatar.png" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            <section id="main"><article id="post-win10_ubuntu" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            WIN10 子系统安装 HEXO 静态博客
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2018/06/07/win10_ubuntu/">
+            <time datetime="2018-06-07T13:42:00.000Z" itemprop="datePublished">2018-06-07</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/win10-linux-ubuntu-hexo-node-js/">win10, linux, ubuntu, hexo, node.js</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+        
+        
+            <h1 id="安装-win10-子系统-Ubuntu"><a href="#安装-win10-子系统-Ubuntu" class="headerlink" title="安装 win10 子系统 Ubuntu"></a>安装 win10 子系统 Ubuntu</h1><ul>
+<li>设置 → 更新和安全 → 开发者选项 → 使用开发人员功能 → 勾选「开发人员模式」</li>
+<li>控制面板 → 程序和功能 → 启用或关闭 Windows 功能 → 勾选「适用于 Linux 的 Windows 子系统」</li>
+<li>重启系统</li>
+<li>打开 Windows Stroe，下载 Ubuntu 即可</li>
+</ul>
+<h1 id="更换-root-用户密码"><a href="#更换-root-用户密码" class="headerlink" title="更换 root 用户密码"></a>更换 root 用户密码</h1><p>安装完 ubuntu 后，每次开机 <code>root</code> 的密码都会随机改变，用下面的命令更改 <code>root</code> 的密码。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo passwd</span><br><span class="line">[sudo] password <span class="keyword">for</span> <span class="string">'YourName'</span>:</span><br><span class="line">Enter new UNIX password:</span><br><span class="line">Retype new UNIX password:</span><br><span class="line">passwd: password updated successfully</span><br></pre></td></tr></table></figure>
+<h1 id="更换源"><a href="#更换源" class="headerlink" title="更换源"></a>更换源</h1><ul>
+<li>在资源管理器中找到</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\用户名\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs\etc\apt\sources.list</span><br></pre></td></tr></table></figure>
+<ul>
+<li>用编辑器打开 sources.list，将里面的内容全注释掉，在最后添加下面的代码：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">deb https://mirrors.ustc.edu.cn/ubuntu/ xenial main restricted universe multiverse</span><br><span class="line">deb-src https://mirrors.ustc.edu.cn/ubuntu/ xenial main restricted universe multiverse</span><br><span class="line"></span><br><span class="line">deb https://mirrors.ustc.edu.cn/ubuntu/ xenial-security main restricted universe multiverse</span><br><span class="line">deb-src https://mirrors.ustc.edu.cn/ubuntu/ xenial-security main restricted universe multiverse</span><br><span class="line"></span><br><span class="line">deb https://mirrors.ustc.edu.cn/ubuntu/ xenial-updates main restricted universe multiverse</span><br><span class="line">deb-src https://mirrors.ustc.edu.cn/ubuntu/ xenial-updates main restricted universe multiverse</span><br><span class="line"></span><br><span class="line">deb https://mirrors.ustc.edu.cn/ubuntu/ xenial-backports main restricted universe multiverse</span><br><span class="line">deb-src https://mirrors.ustc.edu.cn/ubuntu/ xenial-backports main restricted universe multiverse</span><br></pre></td></tr></table></figure>
+<ul>
+<li>然后执行升级命令</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update &amp;&amp; apt-get upgrade &amp;&amp; apt-get dist-upgrade</span><br></pre></td></tr></table></figure>
+<h1 id="启用-SSH"><a href="#启用-SSH" class="headerlink" title="启用 SSH"></a>启用 SSH</h1><p>安装 SSH</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装 ssh</span></span><br><span class="line">sudo apt-get install openssh-server</span><br><span class="line"></span><br><span class="line"><span class="comment"># 备份 sshd_config 配置文件</span></span><br><span class="line">sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak</span><br><span class="line"></span><br><span class="line"><span class="comment"># 编辑 sshd_config 内容：</span></span><br><span class="line">Port 2333 <span class="comment"># 端口改为2333，22端口已被 windows 占用</span></span><br><span class="line">ListenAddress 0.0.0.0 <span class="comment"># 取消注释</span></span><br><span class="line"><span class="comment">#StrictModes yes # 注释</span></span><br><span class="line">PasswordAuthentication yes <span class="comment"># 允许密码登录</span></span><br><span class="line">PermitRootLogin yes <span class="comment"># 允许使用root登录</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动 ssh</span></span><br><span class="line">sudo service ssh start</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果提示sshd error: could not load host key，则用下面的命令重新生成</span></span><br><span class="line">sudo rm /etc/ssh/ssh*key</span><br><span class="line">dpkg-reconfigure openssh-server</span><br><span class="line"></span><br><span class="line"><span class="comment"># 再次启动 ssh</span></span><br><span class="line">sudo service ssh start</span><br></pre></td></tr></table></figure>
+<p>生成 ssh key</p>
+<p>在用户主目录下，看看有没有 <code>.ssh</code> 目录，如果有，再看看这个目录下有没有<strong>私钥</strong> <code>id_rsa</code> 和<strong>公钥</strong> <code>id_rsa.pub</code> 这两个文件，如果已经有了，可直接跳到下一步。如果没有，打开 Shell（Windows 下打开 Git Bash），创建 SSH Key：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建 SSH Key，安全起见，完成 SSH 连接后建议将私钥删除</span></span><br><span class="line">$ ssh-keygen -t rsa -b 4096 -C <span class="string">"email@example.com"</span></span><br><span class="line"><span class="comment"># 下面使用 -f 参数对密钥进行命名，但不会在 .ssh 目录生成密钥</span></span><br><span class="line">$ ssh-keygen -t rsa -b 4096 -C <span class="string">"email@example.com"</span> -f &lt;key name&gt;</span><br><span class="line"><span class="comment"># 使用 -f 参数只能在当前目录生成密钥</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看 ssh-agent 是否运行</span></span><br><span class="line">$ <span class="built_in">eval</span> $(ssh-agent -s)</span><br><span class="line">Agent pid 59566</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将私钥导入 ssh-agent，默认生成的 key name 为 id_rsa</span></span><br><span class="line">$ ssh-add ~/.ssh/&lt;key name&gt;</span><br><span class="line"><span class="comment"># 如果执行 ssh-add 报错，先运行下面的命令</span></span><br><span class="line">$ ssh-agent bash</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将公钥添加至 authorized_keys, 注意修改 USERS</span></span><br><span class="line">$ cp id_rsa.pub authorized_keys</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果 SSH 连接时需要输入密码而无法连接，按以下步步骤来排除</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 更改目录 .ssh 和 authorized_keys 文件的权限，否则 </span></span><br><span class="line">$ <span class="built_in">cd</span> ~</span><br><span class="line">$ chmod 700 .ssh</span><br><span class="line">$ chmod 600 .ssh/authorized_keys</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看加入的密钥列表</span></span><br><span class="line"><span class="comment"># 如果执行 ssh-add 报错，先运行下面的命令</span></span><br><span class="line">$ ssh-agent bash</span><br><span class="line">$ ssh-add -l</span><br><span class="line">4096 SHA256:IpM7HTrUqk/6OIcFRC97AhFjyHsXu36SDg0WOykSpJg /home/USERS/.ssh/id_rsa (RSA)</span><br><span class="line">$ ssh-add -l -E md5</span><br><span class="line">4096 MD5:35:7e:be:15:d2:75:cf:fa:ff:90:0e:f7:28:34:9d:f6 /home/leo/.ssh/id_rsa (RSA)</span><br></pre></td></tr></table></figure>
+<p> Xshell 导入<strong>私钥</strong>链接主机</p>
+<p><code>主机：127.0.0.1</code></p>
+<p><code>端口：2333</code></p>
+<h1 id="将-node-开发环境从-linux-迁移到-win10-bash-on-linux"><a href="#将-node-开发环境从-linux-迁移到-win10-bash-on-linux" class="headerlink" title="将 node 开发环境从 linux 迁移到 win10 bash on linux"></a>将 node 开发环境从 linux 迁移到 win10 bash on linux</h1><ul>
+<li>安装 nvm：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash</span><br></pre></td></tr></table></figure>
+<ul>
+<li>安装 node 和 npm：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">nvm install stable</span><br><span class="line"><span class="comment"># 等待安装完毕后，激活该版本：</span></span><br><span class="line">nvm use stable</span><br></pre></td></tr></table></figure>
+<ul>
+<li>解决 sudo npm 未找到命令：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$ touch .bash_profile //新建文件</span><br><span class="line">$ vim .bash_profile //打开文件</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将下面的内容复制到 .bash_profile 并保存</span></span><br><span class="line"><span class="built_in">export</span> NVM_DIR=<span class="string">"<span class="variable">$HOME</span>/.nvm"</span></span><br><span class="line">[ -s <span class="string">"<span class="variable">$NVM_DIR</span>/nvm.sh"</span> ] &amp;&amp; \. <span class="string">"<span class="variable">$NVM_DIR</span>/nvm.sh"</span> <span class="comment"># This loads nvm</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行下面的命令</span></span><br><span class="line">$ <span class="built_in">source</span> .bash_profile</span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行完毕，我们再看看是否安装成功</span></span><br><span class="line">$ nvm --version</span><br><span class="line">0.33.8</span><br></pre></td></tr></table></figure>
+<p>至此完成 linux 和 node 的安装。</p>
+<h1 id="安装-HEXO"><a href="#安装-HEXO" class="headerlink" title="安装 HEXO"></a>安装 HEXO</h1><h2 id="安装命令如下："><a href="#安装命令如下：" class="headerlink" title="安装命令如下："></a>安装命令如下：</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 下载安装 hexo</span></span><br><span class="line">$ npm install hexo-cli -g</span><br><span class="line"></span><br><span class="line"><span class="comment"># 新建一个网站。如果没有设置 folder ，Hexo 默认在目前的文件夹建立网站。</span></span><br><span class="line">$ hexo init blog</span><br><span class="line"></span><br><span class="line"><span class="comment"># 下面的命令必须在 blog 目录下输入</span></span><br><span class="line">$ <span class="built_in">cd</span> blog</span><br><span class="line">$ npm install</span><br><span class="line"></span><br><span class="line"><span class="comment"># 清除缓存文件 (db.json) 和已生成的静态文件 (public)</span></span><br><span class="line">$ hexo clean</span><br><span class="line"></span><br><span class="line"><span class="comment"># 部署之前预先生成静态文件</span></span><br><span class="line">$ hexo generate</span><br><span class="line"></span><br><span class="line"><span class="comment"># 开启本地服务,在本地进行预览</span></span><br><span class="line">$ hexo server</span><br><span class="line"></span><br><span class="line"><span class="comment"># 预览无问题后发布至 Github</span></span><br><span class="line">$ hexo deploy</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果 deploy 出错，运行下面的代码</span></span><br><span class="line">$ hexo deploy</span><br><span class="line">ERROR Deployer not found: git</span><br><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<h2 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h2><ol>
+<li>Go to your blog’s root folder and clone Icarus into themes/icarus:</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/zthxxx/hexo-theme-icarus.git themes/icarus</span><br></pre></td></tr></table></figure>
+<p>or fork this repository and install it as git submodule</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git submodule add https://github.com/&lt;your-username&gt;/hexo-theme-icarus.git themes/icarus</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>Edit your blog’s <code>_config.yml</code>, change the <code>theme</code> field to <code>icarus</code> to enable this theme:</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme: icarus</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li><p>Rename <code>_config.yml.example</code> in the theme folder to<code>_config.yml</code>.</p>
+</li>
+<li><p>(Optional) Don’t forget to checkout the latest version once in a while:</p>
+</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 更新 icarus 主题</span></span><br><span class="line"><span class="built_in">cd</span> themes/icarus</span><br><span class="line">git pull</span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li>(Optional) To enable <a href="https://github.com/ppoffice/hexo-theme-icarus/wiki/Search#insight-search" target="_blank" rel="noopener">Insight Search</a> as your default search engine, you should also install <code>hexo-generator-json-content</code> from npm.</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -S hexo-generator-json-content</span><br></pre></td></tr></table></figure>
+
+            </div>
+        
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://yoursite.com/2018/06/07/win10_ubuntu/" data-id="cji4uqv4y0001btbneq544ih0" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2018/06/07/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">上一篇</strong>
+            <div class="article-nav-title">
+                
+                    Hello World
+                
+            </div>
+        </a>
+    
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    <section id="comments">
+    
+    </section>
+
+
+
+
+<!-- baidu url auto push script -->
+<script type="text/javascript">
+    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
+</script>     
+</section>
+            <section id="sidebar">
+                
+                    
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/css/images/avatar.png" />
+            <h2 id="name">LeoQtue</h2>
+            <h3 id="title">游手 &amp; 好闲</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>ChangDe, China</span>
+            <a id="follow" target="_blank" href="https://github.com/LeoQtue/">关注我</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                3
+                <span>文章</span>
+            </div>
+            <div class="article-info-block">
+                2
+                <span>标签</span>
+            </div>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="https://github.com/LeoQtue" target="_blank" title="github" class=tooltip>
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="https://twitter.com/LeoQtue" target="_blank" title="twitter" class=tooltip>
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="https://weibo.com/6557784067/profile?topnav=1&wvr=6&is_all=1" target="_blank" title="weibo" class=tooltip>
+                            <i class="fa fa-weibo"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="https://www.facebook.com/LeoQtue" target="_blank" title="facebook" class=tooltip>
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+                
+                
+                    <aside id="widgets">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/06/07/learn_git/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/06/07/learn_git/" class="title">Git 命令查询手册</a></p>
+                            <p class="item-date"><time datetime="2018-06-07T13:42:36.000Z" itemprop="datePublished">2018-06-07</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/06/07/hello-world/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/06/07/hello-world/" class="title">Hello World</a></p>
+                            <p class="item-date"><time datetime="2018-06-07T13:42:00.000Z" itemprop="datePublished">2018-06-07</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/06/07/win10_ubuntu/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/06/07/win10_ubuntu/" class="title">WIN10 子系统安装 HEXO 静态博客</a></p>
+                            <p class="item-date"><time datetime="2018-06-07T13:42:00.000Z" itemprop="datePublished">2018-06-07</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+        
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Git-Github-SSH/" style="font-size: 10px;">Git, Github, SSH</a> <a href="/tags/win10-linux-ubuntu-hexo-node-js/" style="font-size: 10px;">win10, linux, ubuntu, hexo, node.js</a>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://manjusaka.itscoder.com/">Manjusak (写代码的香港记者)</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://saber.love/">saber酱的抱枕 (Hentai RBQ)</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.jamespan.me/">JAMES-PAN (ApsaraDB 里的蒟苣)</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://myloveru.cn/">梦想博客</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://imjad.cn/">AD&#39;s Blog (群内大佬 quin 作者)</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+                
+            </section>
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            LeoQtue &copy; 2018 
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a>
+            <br> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme - <a href="https://github.com/zthxxx/hexo-theme-icarus">Icarus</a>
+        </div>
+    </div>
+</footer>
+        
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true,
+            TeX: {
+                equationNumbers: {
+                  autoNumber: 'AMS'
+                }
+            }
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+        <script>
+(function($){
+    function getUrlParam(paramName) {
+        var paramValue = "", isFound = !1;
+        if (this.location.search.indexOf("?") == 0 && this.location.search.indexOf("=") > 1) {
+            arrSource = unescape(this.location.search).substring(1, this.location.search.length).split("&"), i = 0;
+            while (i < arrSource.length && !isFound) arrSource[i].indexOf("=") > 0 && arrSource[i].split("=")[0].toLowerCase() == paramName.toLowerCase() && (paramValue = arrSource[i].split("=")[1], isFound = !0), i++;
+        }
+        if (paramValue == "") paramValue = undefined;
+        return paramValue;
+    }
+
+    function setRandomBackImg() {
+        var img_path = "/images/background/";
+        var horizontal_img_count = 0;
+        var vertical_img_count = 0;
+        if (window.innerWidth > window.innerHeight) {
+            var background_image_index = ~~(Math.random() * horizontal_img_count);
+            img_path += "horizontal/";
+            document.body.style.backgroundImage = "url(" + img_path + "img_" + background_image_index + ".jpg)";
+        } else {
+            var background_image_index = ~~(Math.random() * vertical_img_count);
+            img_path += "vertical/";
+            document.body.style.backgroundImage = "url(" + img_path + "img_" + background_image_index + ".jpg)";
+        }
+    }
+
+    function setMelanStyle(enable) {
+        if (enable) {
+            $("head").append("<link>").children(":last").attr({rel: "stylesheet", type: "text/css", href: "/css/style-melan.css"});
+            setRandomBackImg();
+        } else {
+            document.body.style.backgroundImage = "none";
+            $('link[rel="stylesheet"][href$="/css/style-melan.css"]').remove();
+        }
+    }
+
+    function setStyleReverseTag() {
+        $("#world-reverse")[0].text = $.cookie("scheme") == "melan" ? 
+        "表世界" : 
+        "里世界" ;
+    }
+
+    function reverseSchemes() {
+        if ($.cookie("scheme") != "melan") {
+            $.cookie("scheme", "melan", { expires: 365, path: '/' });
+            setMelanStyle(true);
+        } else {
+            $.cookie("scheme", "icarus", { expires: 365, path: '/' });
+            setMelanStyle(false);
+        }
+        setStyleReverseTag();
+    }
+
+    if (getUrlParam("scheme") == "icarus") {
+        $.cookie("scheme", "icarus", { expires: 365, path: '/' });
+    } else if (getUrlParam("scheme") == "melan") {
+        $.cookie("scheme", "melan", { expires: 365, path: '/' });
+    }
+
+    $("#world-reverse").click(function(e) {
+        reverseSchemes();
+    });
+
+    setMelanStyle($.cookie("scheme") == "melan");
+    $(setStyleReverseTag);
+})(jQuery);
+</script>
+    </div>
+    <canvas id="coloured-ribbon"></canvas>
+<script type="text/javascript">
+(function(CONFIG){
+  var alpha = CONFIG.alpha;
+  var baseSize = CONFIG.baseSize;
+  
+  var canvas = document.getElementById('coloured-ribbon');
+  var context = canvas.getContext('2d');
+  var pixelRatio = window.devicePixelRatio || 1;
+
+  canvas.width = window.innerWidth * pixelRatio;
+  canvas.height = window.innerHeight * pixelRatio;
+  context.scale(pixelRatio, pixelRatio);
+  context.globalAlpha = alpha;
+  
+  function ColouredRibbon(context, baseSize) {
+    var pi = Math.PI;
+    var cos = Math.cos;
+    var random = Math.random;
+    var width = window.innerWidth;
+    var height = window.innerHeight;
+    var colorStep = 0;
+    
+    function Triangle(height, baseSize) {
+      var baseHeight = height * 0.7;
+      return {
+        pointA: {
+          x: 0,
+          y: baseHeight + baseSize * random()
+        },
+        pointB: {
+          x: 0,
+          y: baseHeight - baseSize * random()
+        },
+        nextPoint: {
+          x: 0,
+          y: 0
+        }
+      };
+    }
+    
+    function randomPoint(basePoint, baseSize) {
+      var x, y;
+      x = basePoint.x + (random() * 2 - 0.25) * baseSize;
+      do {
+        y = basePoint.y + (random() * 2 - 1.1) * baseSize;
+      } while(y < 0 || y > height);
+      return {x:x, y:y};
+    }
+    
+    function drawTriangle(triangle, colorStep) {
+      var potA = triangle.pointA;
+      var potB = triangle.pointB;
+      var potC = triangle.nextPoint;
+      context.beginPath();
+      context.moveTo(potA.x, potA.y);
+      context.lineTo(potB.x, potB.y);
+      context.lineTo(potC.x, potC.y);
+      context.closePath();
+      context.fillStyle = '#'+(cos(colorStep)*127+128<<16 | cos(colorStep+2*pi/3)*127+128<<8 | cos(colorStep+4*pi/3)*127+128).toString(16);
+      context.fill();
+    }
+    
+    function drawRibbon(triangle, size) {
+      while(triangle.pointA.x < width) {
+        triangle.nextPoint = randomPoint(triangle.pointB, baseSize);
+        drawTriangle(triangle, colorStep+=pi/25);
+        triangle.pointA = triangle.pointB;
+        triangle.pointB = triangle.nextPoint;
+      }
+    }
+    
+    function redrawRibbon() {
+      context.clearRect(0, 0, width, height);
+      drawRibbon(new Triangle(height, baseSize));
+    }
+    
+    redrawRibbon();
+    return redrawRibbon;
+  }
+  document.onclick = ColouredRibbon(context, baseSize);    
+})({alpha: 0.6, baseSize: 90});
+</script>
+</body>
+</html>

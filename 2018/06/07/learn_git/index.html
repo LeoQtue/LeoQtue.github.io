@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Git 命令查询手册 | Leo&#39;s Blog</title>
+    
+    
+        <meta name="keywords" content="Git, Github, SSH" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="Git 命令查询手册(原作廖雪峰)全局登录 Git12$ git config --global user.name &quot;Your Name&quot;$ git config --global user.email &quot;email@example.com&quot; 创建版本库初始化一个 Git 仓库，使用 git init 命令。 添加文件到 Git 仓库，分两步：  使用命令 git add &amp;lt;file&amp;gt">
+<meta name="keywords" content="Git, Github, SSH">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git 命令查询手册">
+<meta property="og:url" content="http://yoursite.com/2018/06/07/learn_git/index.html">
+<meta property="og:site_name" content="Leo&#39;s Blog">
+<meta property="og:description" content="Git 命令查询手册(原作廖雪峰)全局登录 Git12$ git config --global user.name &quot;Your Name&quot;$ git config --global user.email &quot;email@example.com&quot; 创建版本库初始化一个 Git 仓库，使用 git init 命令。 添加文件到 Git 仓库，分两步：  使用命令 git add &amp;lt;file&amp;gt">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-06-07T17:48:37.496Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Git 命令查询手册">
+<meta name="twitter:description" content="Git 命令查询手册(原作廖雪峰)全局登录 Git12$ git config --global user.name &quot;Your Name&quot;$ git config --global user.email &quot;email@example.com&quot; 创建版本库初始化一个 Git 仓库，使用 git init 命令。 添加文件到 Git 仓库，分两步：  使用命令 git add &amp;lt;file&amp;gt">
+    
+
+    
+
+    
+        <link rel="icon" href="/favicon.ico" />
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="/libs/jquery/plugins/cookie/1.4.1/jquery.cookie.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">Leo&#39;s Blog</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/">首页</a>
+                
+                    <a class="main-nav-link" href="/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/tags">标签</a>
+                
+                    <a class="main-nav-link" href="/about">关于</a>
+                
+                
+                    <a class="main-nav-link" id="world-reverse" href="#">表世界</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/css/images/avatar.png" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            <section id="main"><article id="post-learn_git" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            Git 命令查询手册
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2018/06/07/learn_git/">
+            <time datetime="2018-06-07T13:42:36.000Z" itemprop="datePublished">2018-06-07</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Git-Github-SSH/">Git, Github, SSH</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+        
+        
+            <h1 id="Git-命令查询手册-原作廖雪峰"><a href="#Git-命令查询手册-原作廖雪峰" class="headerlink" title="Git 命令查询手册(原作廖雪峰)"></a>Git 命令查询手册<a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="noopener">(原作廖雪峰)</a></h1><h2 id="全局登录-Git"><a href="#全局登录-Git" class="headerlink" title="全局登录 Git"></a><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/00137396287703354d8c6c01c904c7d9ff056ae23da865a000" target="_blank" rel="noopener">全局登录 Git</a></h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">"Your Name"</span></span><br><span class="line">$ git config --global user.email <span class="string">"email@example.com"</span></span><br></pre></td></tr></table></figure>
+<h2 id="创建版本库"><a href="#创建版本库" class="headerlink" title="创建版本库"></a><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/0013743256916071d599b3aed534aaab22a0db6c4e07fd0000" target="_blank" rel="noopener">创建版本库</a></h2><p>初始化一个 Git 仓库，使用 <code>git init</code> 命令。</p>
+<p>添加文件到 Git 仓库，分两步：</p>
+<ul>
+<li><p>使用命令 <code>git add &lt;file&gt;</code>，注意，可反复多次使用，添加多个文件；</p>
+</li>
+<li><p>使用命令 <code>git commit -m &lt;message&gt;</code>，完成。</p>
+</li>
+</ul>
+<h2 id="时光机穿梭"><a href="#时光机穿梭" class="headerlink" title="时光机穿梭"></a><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/0013743858312764dca7ad6d0754f76aa562e3789478044000" target="_blank" rel="noopener">时光机穿梭</a></h2><ul>
+<li><p>要随时掌握工作区的状态，使用 <code>git status</code> 命令。</p>
+</li>
+<li><p>如果 <code>git status</code> 告诉你有文件被修改过，用 <code>git diff &lt;file&gt;</code> 可以查看修改内容。</p>
+</li>
+</ul>
+<h3 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/0013744142037508cf42e51debf49668810645e02887691000" target="_blank" rel="noopener">版本回退</a></h3><ul>
+<li><p>HEAD指向的版本就是当前版本，因此，Git 允许我们在版本的历史之间穿梭，使用命令 <code>git reset --hard commit_id</code> 或 <code>git reset --hard &lt;HEAD^&gt; &lt;HEAD~n(number of steps)&gt;</code>。</p>
+</li>
+<li><p>穿梭前，用 <code>git log</code> 或 <code>git log --pretty=oneline</code> 可以查看提交历史，以便确定要回退到哪个版本。</p>
+</li>
+<li><p>要重返未来，用 <code>git reflog</code> 查看命令历史，以便确定要回到未来的哪个版本。</p>
+</li>
+</ul>
+<h3 id="工作区和暂存区"><a href="#工作区和暂存区" class="headerlink" title="工作区和暂存区"></a><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/0013745374151782eb658c5a5ca454eaa451661275886c6000" target="_blank" rel="noopener">工作区和暂存区</a></h3><ul>
+<li><p>第一步是用 <code>git add</code> 把文件添加进去，实际上就是把文件修改添加到暂存区；</p>
+</li>
+<li><p>第二步是用 <code>git commit</code> 提交更改，实际上就是把暂存区的所有内容提交到当前分支。</p>
+</li>
+</ul>
+<h4 id="工作区（Working-Directory）"><a href="#工作区（Working-Directory）" class="headerlink" title="工作区（Working Directory）"></a>工作区（Working Directory）</h4><p>就是你在电脑里能看到的目录，比如我的 <code>learngit</code> 文件夹就是一个工作区</p>
+<h4 id="版本库（Repository）"><a href="#版本库（Repository）" class="headerlink" title="版本库（Repository）"></a>版本库（Repository）</h4><p>工作区有一个隐藏目录 <code>.git</code>，这个不算工作区，而是 Git 的版本库</p>
+<h3 id="管理修改"><a href="#管理修改" class="headerlink" title="管理修改"></a><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/001374829472990293f16b45df14f35b94b3e8a026220c5000" target="_blank" rel="noopener">管理修改</a></h3><p>每次修改，如果不用 <code>git add</code> 到暂存区，那就不会加入到 <code>commit</code> 中。</p>
+<h3 id="撤销修改"><a href="#撤销修改" class="headerlink" title="撤销修改"></a><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/001374831943254ee90db11b13d4ba9a73b9047f4fb968d000" target="_blank" rel="noopener">撤销修改</a></h3><ul>
+<li><p>场景 1：当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令 <code>git checkout -- file</code> 。</p>
+</li>
+<li><p>场景 2：当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令 <code>git reset HEAD &lt;file&gt;</code> ，就回到了场景 1，第二步按场景 1 操作。</p>
+</li>
+<li><p>场景 3：已经提交了不合适的修改到版本库时，想要撤销本次提交，参考版本回退一节，不过前提是没有推送到远程库。</p>
+</li>
+</ul>
+<h3 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/0013758392816224cafd33c44b4451887cc941e6716805c000" target="_blank" rel="noopener">删除文件</a></h3><ul>
+<li><p>一般情况下，你通常直接在文件管理器中把没用的文件删了，或者用 <code>rm &lt;file&gt;</code> 命令删除</p>
+</li>
+<li><p><code>git status</code> 命令会立刻告诉你哪些文件被删除了</p>
+</li>
+<li><p>现在你有两个选择，一是确实要从版本库中删除该文件，那就用命令 <code>git rm</code> 删掉，并且<code>git commit</code></p>
+</li>
+<li><p><code>git checkout -- &lt;file&gt;</code> 用版本库里的版本替换工作区的版本，无论工作区是修改还是删除，都可以 “一键还原”</p>
+</li>
+</ul>
+<p>命令 <code>git rm</code> 用于删除一个文件。如果一个文件已经被提交到版本库，那么你永远不用担心误删，但是要小心，你只能恢复文件到最新版本，你会丢失<strong>最近一次提交后你修改的内容</strong>。</p>
+<h2 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/001374385852170d9c7adf13c30429b9660d0eb689dd43a000" target="_blank" rel="noopener">远程仓库</a></h2><ul>
+<li>第 1 步：创建 SSH Key。在用户主目录下，看看有没有 <code>.ssh</code> 目录，如果有，再看看这个目录下有没有<strong>私钥</strong> <code>id_rsa</code> 和<strong>公钥</strong> <code>id_rsa.pub</code> 这两个文件，如果已经有了，可直接跳到下一步。如果没有，打开 Shell（Windows 下打开 Git Bash），创建 SSH Key：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建 SSH Key，安全起见，完成 SSH 连接后建议将私钥删除</span></span><br><span class="line">$ ssh-keygen -t rsa -b 4096 -C <span class="string">"email@example.com"</span></span><br><span class="line"><span class="comment"># 下面使用 -f 参数对密钥进行命名，但不会在 .ssh 目录生成密钥</span></span><br><span class="line">$ ssh-keygen -t rsa -b 4096 -C <span class="string">"email@example.com"</span> -f &lt;key name&gt;</span><br><span class="line"><span class="comment"># 使用 -f 参数只能在当前目录生成密钥</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看 ssh-agent 是否运行</span></span><br><span class="line">$ <span class="built_in">eval</span> $(ssh-agent -s)</span><br><span class="line">Agent pid 59566</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将私钥导入 ssh-agent，默认生成的 key name 为 id_rsa</span></span><br><span class="line">$ ssh-add ~/.ssh/&lt;key name&gt;</span><br><span class="line"><span class="comment"># 如果执行 ssh-add 报错，先运行下面的命令</span></span><br><span class="line">$ ssh-agent bash</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将公钥添加至 authorized_keys, 注意修改 USERS</span></span><br><span class="line">$ cp id_rsa.pub authorized_keys</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果 SSH 连接时需要输入密码而无法连接，按以下步步骤来排除</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 更改目录 .ssh 和 authorized_keys 文件的权限，否则 </span></span><br><span class="line">$ <span class="built_in">cd</span> ~</span><br><span class="line">$ chmod 700 .ssh</span><br><span class="line">$ chmod 600 .ssh/authorized_keys</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看加入的密钥列表</span></span><br><span class="line"><span class="comment"># 如果执行 ssh-add 报错，先运行下面的命令</span></span><br><span class="line">$ ssh-agent bash</span><br><span class="line">$ ssh-add -l</span><br><span class="line">4096 SHA256:IpM7HTrUqk/6OIcFRC97AhFjyHsXu36SDg0WOykSpJg /home/USERS/.ssh/id_rsa (RSA)</span><br><span class="line">$ ssh-add -l -E md5</span><br><span class="line">4096 MD5:35:7e:be:15:d2:75:cf:fa:ff:90:0e:f7:28:34:9d:f6 /home/leo/.ssh/id_rsa (RSA)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 测试连接 Github 情况，成功后就可以 clone 或 push 仓库了</span></span><br><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+<ul>
+<li>第 2 步：登陆 GitHub，打开 “Account settings”，“SSH Keys” 页面：然后，点 “Add SSH Key”，填上任意 Title，在 Key 文本框里粘贴 <code>id_rsa.pub</code> 文件的内容</li>
+</ul>
+<h3 id="添加远程库"><a href="#添加远程库" class="headerlink" title="添加远程库"></a><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/0013752340242354807e192f02a44359908df8a5643103a000" target="_blank" rel="noopener">添加远程库</a></h3><ul>
+<li><p>登陆 GitHub，然后，在右上角找到 “Create a new repo” 按钮，创建一个新的仓库</p>
+</li>
+<li><p>根据 GitHub 的提示，在本地的 <code>learngit</code> 仓库下运行命令：</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 注意修改 Name 、 YourGit 为你自己的用户名和仓库名</span></span><br><span class="line">$ git remote add origin git@github.com:Name/YourGit.git</span><br><span class="line">$ git push -u origin master</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>要关联一个远程库，使用命令 <code>git remote add origingit@server-name:path/repo-name.git</code></p>
+</li>
+<li><p>关联后，使用命令 <code>git push -u origin master</code> 第一次推送 <code>master</code> 分支的所有内容</p>
+</li>
+<li><p>此后，每次本地提交后，只要有必要，就可以使用命令 <code>git push origin master</code> 推送最新修改</p>
+</li>
+</ul>
+<h3 id="从远程库克隆"><a href="#从远程库克隆" class="headerlink" title="从远程库克隆"></a><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/001375233990231ac8cf32ef1b24887a5209f83e01cb94b000" target="_blank" rel="noopener">从远程库克隆</a></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 注意修改 Name 和 Git</span></span><br><span class="line">$ git <span class="built_in">clone</span> git@github.com:Name/Git.git</span><br><span class="line"><span class="comment"># clone 后的目录为你当前所在的目录</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>要克隆一个仓库，首先必须知道仓库的地址，然后使用 <code>git clone</code> 命令克隆。</p>
+</li>
+<li><p>Git 支持多种协议，包括 <code>https</code>，但通过 <code>ssh</code> 支持的原生 git 协议速度最快。</p>
+</li>
+</ul>
+<h2 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/0013743862006503a1c5bf5a783434581661a3cc2084efa000" target="_blank" rel="noopener">分支管理</a></h2><p>分支就是科幻电影里面的平行宇宙，当你正在电脑前努力学习 Git 的时候，另一个你正在另一个平行宇宙里努力学习 SVN。</p>
+<p>如果两个平行宇宙互不干扰，那对现在的你也没啥影响。不过，在某个时间点，两个平行宇宙合并了，结果，你既学会了 Git 又学会了 SVN！</p>
+<h3 id="创建与合并分支"><a href="#创建与合并分支" class="headerlink" title="创建与合并分支"></a><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/001375840038939c291467cc7c747b1810aab2fb8863508000" target="_blank" rel="noopener">创建与合并分支</a></h3><p>Git 鼓励大量使用分支：</p>
+<ul>
+<li><p>查看分支：<code>git branch</code></p>
+</li>
+<li><p>创建分支：<code>git branch &lt;name&gt;</code></p>
+</li>
+<li><p>切换分支：<code>git checkout &lt;name&gt;</code></p>
+</li>
+<li><p>创建 + 切换分支：<code>git checkout -b &lt;name&gt;</code></p>
+</li>
+<li><p>合并某分支到当前分支：<code>git merge &lt;name&gt;</code></p>
+</li>
+<li><p>删除分支：<code>git branch -d &lt;name&gt;</code></p>
+</li>
+</ul>
+<h3 id="解决冲突"><a href="#解决冲突" class="headerlink" title="解决冲突"></a><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/001375840202368c74be33fbd884e71b570f2cc3c0d1dcf000" target="_blank" rel="noopener">解决冲突</a></h3><p>当不同的分支都提交修改后，如果内容不一样，合并会出现冲突</p>
+<ul>
+<li><p>当 Git 无法自动合并分支时，就必须首先解决冲突。解决冲突后，再提交，合并完成。</p>
+</li>
+<li><p>解决冲突就是把 Git 合并失败的文件手动编辑为我们希望的内容，再提交。</p>
+</li>
+<li><p>用 <code>git log --graph --pretty=oneline  --abbrev-commit</code> 命令可以看到分支合并图。</p>
+</li>
+</ul>
+<h3 id="分支管理策略"><a href="#分支管理策略" class="headerlink" title="分支管理策略"></a><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/0013758410364457b9e3d821f4244beb0fd69c61a185ae0000" target="_blank" rel="noopener">分支管理策略</a></h3><ul>
+<li><p>仍然创建并切换 dev 分支</p>
+</li>
+<li><p>修改 readme.md 文件，并提交一个新的 commit</p>
+</li>
+<li><p>现在，我们切换回 master</p>
+</li>
+<li><p>准备合并dev分支，请注意–no-ff参数，表示禁用 Fast forward ,因为本次合并要创建一个新的 commit，所以加上 <code>-m</code> 参数，把 commit 描述写进去。</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git merge --no-ff -m <span class="string">"merge with no-ff"</span> dev</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>合并后，我们用 <code>git log</code> 看看分支历史：</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">log</span> --graph --pretty=oneline --abbrev-commit</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="Bug-分支"><a href="#Bug-分支" class="headerlink" title="Bug 分支"></a><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/00137602359178794d966923e5c4134bc8bf98dfb03aea3000" target="_blank" rel="noopener">Bug 分支</a></h3><p>暂停，以后再学习！</p>
+
+            </div>
+        
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://yoursite.com/2018/06/07/learn_git/" data-id="cji4uqv640004btbnyxkhw1fi" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2018/06/07/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">Hello World</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    <section id="comments">
+    
+    </section>
+
+
+
+
+<!-- baidu url auto push script -->
+<script type="text/javascript">
+    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
+</script>     
+</section>
+            <section id="sidebar">
+                
+                    
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/css/images/avatar.png" />
+            <h2 id="name">LeoQtue</h2>
+            <h3 id="title">游手 &amp; 好闲</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>ChangDe, China</span>
+            <a id="follow" target="_blank" href="https://github.com/LeoQtue/">关注我</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                3
+                <span>文章</span>
+            </div>
+            <div class="article-info-block">
+                2
+                <span>标签</span>
+            </div>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="https://github.com/LeoQtue" target="_blank" title="github" class=tooltip>
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="https://twitter.com/LeoQtue" target="_blank" title="twitter" class=tooltip>
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="https://weibo.com/6557784067/profile?topnav=1&wvr=6&is_all=1" target="_blank" title="weibo" class=tooltip>
+                            <i class="fa fa-weibo"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="https://www.facebook.com/LeoQtue" target="_blank" title="facebook" class=tooltip>
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+                
+                
+                    <aside id="widgets">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/06/07/learn_git/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/06/07/learn_git/" class="title">Git 命令查询手册</a></p>
+                            <p class="item-date"><time datetime="2018-06-07T13:42:36.000Z" itemprop="datePublished">2018-06-07</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/06/07/hello-world/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/06/07/hello-world/" class="title">Hello World</a></p>
+                            <p class="item-date"><time datetime="2018-06-07T13:42:00.000Z" itemprop="datePublished">2018-06-07</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/06/07/win10_ubuntu/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/06/07/win10_ubuntu/" class="title">WIN10 子系统安装 HEXO 静态博客</a></p>
+                            <p class="item-date"><time datetime="2018-06-07T13:42:00.000Z" itemprop="datePublished">2018-06-07</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+        
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Git-Github-SSH/" style="font-size: 10px;">Git, Github, SSH</a> <a href="/tags/win10-linux-ubuntu-hexo-node-js/" style="font-size: 10px;">win10, linux, ubuntu, hexo, node.js</a>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://manjusaka.itscoder.com/">Manjusak (写代码的香港记者)</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://saber.love/">saber酱的抱枕 (Hentai RBQ)</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://blog.jamespan.me/">JAMES-PAN (ApsaraDB 里的蒟苣)</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://myloveru.cn/">梦想博客</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://imjad.cn/">AD&#39;s Blog (群内大佬 quin 作者)</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+                
+            </section>
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            LeoQtue &copy; 2018 
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a>
+            <br> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme - <a href="https://github.com/zthxxx/hexo-theme-icarus">Icarus</a>
+        </div>
+    </div>
+</footer>
+        
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true,
+            TeX: {
+                equationNumbers: {
+                  autoNumber: 'AMS'
+                }
+            }
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+        <script>
+(function($){
+    function getUrlParam(paramName) {
+        var paramValue = "", isFound = !1;
+        if (this.location.search.indexOf("?") == 0 && this.location.search.indexOf("=") > 1) {
+            arrSource = unescape(this.location.search).substring(1, this.location.search.length).split("&"), i = 0;
+            while (i < arrSource.length && !isFound) arrSource[i].indexOf("=") > 0 && arrSource[i].split("=")[0].toLowerCase() == paramName.toLowerCase() && (paramValue = arrSource[i].split("=")[1], isFound = !0), i++;
+        }
+        if (paramValue == "") paramValue = undefined;
+        return paramValue;
+    }
+
+    function setRandomBackImg() {
+        var img_path = "/images/background/";
+        var horizontal_img_count = 0;
+        var vertical_img_count = 0;
+        if (window.innerWidth > window.innerHeight) {
+            var background_image_index = ~~(Math.random() * horizontal_img_count);
+            img_path += "horizontal/";
+            document.body.style.backgroundImage = "url(" + img_path + "img_" + background_image_index + ".jpg)";
+        } else {
+            var background_image_index = ~~(Math.random() * vertical_img_count);
+            img_path += "vertical/";
+            document.body.style.backgroundImage = "url(" + img_path + "img_" + background_image_index + ".jpg)";
+        }
+    }
+
+    function setMelanStyle(enable) {
+        if (enable) {
+            $("head").append("<link>").children(":last").attr({rel: "stylesheet", type: "text/css", href: "/css/style-melan.css"});
+            setRandomBackImg();
+        } else {
+            document.body.style.backgroundImage = "none";
+            $('link[rel="stylesheet"][href$="/css/style-melan.css"]').remove();
+        }
+    }
+
+    function setStyleReverseTag() {
+        $("#world-reverse")[0].text = $.cookie("scheme") == "melan" ? 
+        "表世界" : 
+        "里世界" ;
+    }
+
+    function reverseSchemes() {
+        if ($.cookie("scheme") != "melan") {
+            $.cookie("scheme", "melan", { expires: 365, path: '/' });
+            setMelanStyle(true);
+        } else {
+            $.cookie("scheme", "icarus", { expires: 365, path: '/' });
+            setMelanStyle(false);
+        }
+        setStyleReverseTag();
+    }
+
+    if (getUrlParam("scheme") == "icarus") {
+        $.cookie("scheme", "icarus", { expires: 365, path: '/' });
+    } else if (getUrlParam("scheme") == "melan") {
+        $.cookie("scheme", "melan", { expires: 365, path: '/' });
+    }
+
+    $("#world-reverse").click(function(e) {
+        reverseSchemes();
+    });
+
+    setMelanStyle($.cookie("scheme") == "melan");
+    $(setStyleReverseTag);
+})(jQuery);
+</script>
+    </div>
+    <canvas id="coloured-ribbon"></canvas>
+<script type="text/javascript">
+(function(CONFIG){
+  var alpha = CONFIG.alpha;
+  var baseSize = CONFIG.baseSize;
+  
+  var canvas = document.getElementById('coloured-ribbon');
+  var context = canvas.getContext('2d');
+  var pixelRatio = window.devicePixelRatio || 1;
+
+  canvas.width = window.innerWidth * pixelRatio;
+  canvas.height = window.innerHeight * pixelRatio;
+  context.scale(pixelRatio, pixelRatio);
+  context.globalAlpha = alpha;
+  
+  function ColouredRibbon(context, baseSize) {
+    var pi = Math.PI;
+    var cos = Math.cos;
+    var random = Math.random;
+    var width = window.innerWidth;
+    var height = window.innerHeight;
+    var colorStep = 0;
+    
+    function Triangle(height, baseSize) {
+      var baseHeight = height * 0.7;
+      return {
+        pointA: {
+          x: 0,
+          y: baseHeight + baseSize * random()
+        },
+        pointB: {
+          x: 0,
+          y: baseHeight - baseSize * random()
+        },
+        nextPoint: {
+          x: 0,
+          y: 0
+        }
+      };
+    }
+    
+    function randomPoint(basePoint, baseSize) {
+      var x, y;
+      x = basePoint.x + (random() * 2 - 0.25) * baseSize;
+      do {
+        y = basePoint.y + (random() * 2 - 1.1) * baseSize;
+      } while(y < 0 || y > height);
+      return {x:x, y:y};
+    }
+    
+    function drawTriangle(triangle, colorStep) {
+      var potA = triangle.pointA;
+      var potB = triangle.pointB;
+      var potC = triangle.nextPoint;
+      context.beginPath();
+      context.moveTo(potA.x, potA.y);
+      context.lineTo(potB.x, potB.y);
+      context.lineTo(potC.x, potC.y);
+      context.closePath();
+      context.fillStyle = '#'+(cos(colorStep)*127+128<<16 | cos(colorStep+2*pi/3)*127+128<<8 | cos(colorStep+4*pi/3)*127+128).toString(16);
+      context.fill();
+    }
+    
+    function drawRibbon(triangle, size) {
+      while(triangle.pointA.x < width) {
+        triangle.nextPoint = randomPoint(triangle.pointB, baseSize);
+        drawTriangle(triangle, colorStep+=pi/25);
+        triangle.pointA = triangle.pointB;
+        triangle.pointB = triangle.nextPoint;
+      }
+    }
+    
+    function redrawRibbon() {
+      context.clearRect(0, 0, width, height);
+      drawRibbon(new Triangle(height, baseSize));
+    }
+    
+    redrawRibbon();
+    return redrawRibbon;
+  }
+  document.onclick = ColouredRibbon(context, baseSize);    
+})({alpha: 0.6, baseSize: 90});
+</script>
+</body>
+</html>
